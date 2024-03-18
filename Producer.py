@@ -111,7 +111,7 @@ def intercept_video_stream(video_device):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-        # Conver video_frame to bytes
+        # Convert video_frame to bytes
         video_frame_bytes_stream = cv2.imencode('.jpg', video_frame)[1].tobytes()
         # Send video_frame_bytes_stream to the kafka topic
         my_producer.produce(topicName, key=i, value=video_frame_bytes_stream)
