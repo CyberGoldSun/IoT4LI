@@ -87,7 +87,6 @@ def intercept_video_stream(video_device):
         # Verify if faces are detected
         if face_locations_list:
             # If a face is detected and the face_location_list is not empty
-            # Save the image as base64
             resized_video_frame = cv2.resize(video_frame, (width, height))
             new_frame = cv2.cvtColor(resized_video_frame, cv2.COLOR_BGR2GRAY)
             cv2.imwrite("inject.jpg", new_frame)
